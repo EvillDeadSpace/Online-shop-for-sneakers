@@ -8,6 +8,7 @@ import Contact from './components/SHOP/Contact';
 import Home from './components/SHOP/Home';
 import Services from './components/SHOP/Services';
 import Pricing from './components/SHOP/Pricing';
+
 const router = createBrowserRouter([
 
   {

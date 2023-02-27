@@ -3,13 +3,13 @@ import { TextInput } from 'flowbite-react';
 import { Label } from 'flowbite-react';
 
 
-const Modal = ({ visible, onClose }) => {
-    const handlerOnClose = (e) => {
+const Modal = ({ visible, onClose }: IModal) => {
+    const handlerOnClose = (e: React.MouseEvent<HTMLElement>) => {
         if (e.target.id === 'container') onClose();
     }
     if (!visible) return null;
 
-    const onFinish = (e) => {
+    const onFinish = (e: any) => {
         console.log(e);
         setTimeout(() => { alert('You have successfully ordered the sneakers!'), 1000 })
     }
