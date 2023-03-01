@@ -3,25 +3,25 @@ import { Card } from 'flowbite-react'
 import { useState } from 'react'
 
 
-const Subscription = ({ name, price, }) => {
+const Subscription3 = ({ name, price, }) => {
 
 
 
 
     return (
         <div>
-            <div className=' jmt-24 ustify-center mt-5'>
+            <div className=' jmt-24 ustify-center mt-5 '>
                 <div className="max-w-sm ">
                     <Card>
                         <h5 className="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400">
-                            Basic
+                            Premium
                         </h5>
                         <div className="flex items-baseline text-gray-900 dark:text-white">
                             <span className="text-3xl font-semibold">
                                 $
                             </span>
                             <span className="text-4xl font-bold tracking-tight">
-                                29.99
+                                69.99
                             </span>
                             <span className="ml-1 text-xl font-normal text-gray-500 dark:text-gray-400">
                                 /month
@@ -82,9 +82,9 @@ const Subscription = ({ name, price, }) => {
                                     Integration help
                                 </span>
                             </li>
-                            <li className="flex space-x-3 line-through decoration-gray-500">
+                            <li className="flex space-x-3 {line-through} decoration-gray-500">
                                 <svg
-                                    className="h-5 w-5 shrink-0 text-gray-400 dark:text-gray-500"
+                                    className="h-5 w-5 shrink-0 text-blue-600 dark:text-blue-500"
                                     fill="currentColor"
                                     viewBox="0 0 20 20"
                                     xmlns="http://www.w3.org/2000/svg"
@@ -95,13 +95,13 @@ const Subscription = ({ name, price, }) => {
                                         clipRule="evenodd"
                                     />
                                 </svg>
-                                <span className="text-base font-normal leading-tight text-gray-500">
+                                <span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">
                                     Sketch Files
                                 </span>
                             </li>
-                            <li className="flex space-x-3 line-through decoration-gray-500">
+                            <li className="flex space-x-3  decoration-gray-500">
                                 <svg
-                                    className="h-5 w-5 shrink-0 text-gray-400 dark:text-gray-500"
+                                    className="h-5 w-5 shrink-0 text-blue-600 dark:text-blue-500"
                                     fill="currentColor"
                                     viewBox="0 0 20 20"
                                     xmlns="http://www.w3.org/2000/svg"
@@ -112,13 +112,13 @@ const Subscription = ({ name, price, }) => {
                                         clipRule="evenodd"
                                     />
                                 </svg>
-                                <span className="text-base font-normal leading-tight text-gray-500">
+                                <span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">
                                     API Access
                                 </span>
                             </li>
-                            <li className="flex space-x-3 line-through decoration-gray-500">
+                            <li className="flex space-x-3  decoration-gray-500">
                                 <svg
-                                    className="h-5 w-5 shrink-0 text-gray-400 dark:text-gray-500"
+                                    className="h-5 w-5 shrink-0 text-blue-600 dark:text-blue-500"
                                     fill="currentColor"
                                     viewBox="0 0 20 20"
                                     xmlns="http://www.w3.org/2000/svg"
@@ -129,13 +129,13 @@ const Subscription = ({ name, price, }) => {
                                         clipRule="evenodd"
                                     />
                                 </svg>
-                                <span className="text-base font-normal leading-tight text-gray-500">
+                                <span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">
                                     Complete documentation
                                 </span>
                             </li>
-                            <li className="flex space-x-3 line-through decoration-gray-500">
+                            <li className="flex space-x-3  decoration-gray-400">
                                 <svg
-                                    className="h-5 w-5 shrink-0 text-gray-400 dark:text-gray-500"
+                                    className="h-5 w-5 shrink-0 text-blue-600 dark:text-blue-500"
                                     fill="currentColor"
                                     viewBox="0 0 20 20"
                                     xmlns="http://www.w3.org/2000/svg"
@@ -146,7 +146,7 @@ const Subscription = ({ name, price, }) => {
                                         clipRule="evenodd"
                                     />
                                 </svg>
-                                <span className="text-base font-normal leading-tight text-gray-500">
+                                <span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">
                                     24×7 phone & email support
                                 </span>
                             </li>
@@ -167,4 +167,4 @@ const Subscription = ({ name, price, }) => {
     )
 }
 
-export default Subscription
+export default Subscription3
