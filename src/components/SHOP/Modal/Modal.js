@@ -9,10 +9,6 @@ const Modal = ({ visible, onClose }: IModal) => {
     }
     if (!visible) return null;
 
-    const onFinish = (e: any) => {
-        console.log(e);
-        setTimeout(() => { alert('You have successfully ordered the sneakers!'), 1000 })
-    }
 
 
     return (
@@ -71,7 +67,7 @@ const Modal = ({ visible, onClose }: IModal) => {
                         />
                     </div>
 
-                    <button onClick={onFinish} className="btn btn-primary mt-2">ORDER NOW!</button>
+                    <button className="btn btn-primary mt-2">ORDER NOW!</button>
                     <button onClick={onClose} class="flex  item-center btn btn-active btn-secondary justify-center">
                         Cancel the order </button>
 

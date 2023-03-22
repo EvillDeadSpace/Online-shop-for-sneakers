@@ -1,60 +1,82 @@
-import React from 'react'
-import { Navbar } from 'flowbite-react'
-import Logo from './Picture/logo.png'
-import { Link } from 'react-router-dom'
-import Home from './Home'
-import About from './About'
-import Services from './Services'
-import Pricing from './Pricing'
-import Contact from './Contact'
-
+import React from "react";
+import { Navbar } from "flowbite-react";
+import Logo from "./Picture/logo.png";
+import { Link } from "react-router-dom";
+import { useAuth, logout } from "../firebasse/base";
+import { CurrentUser } from "../firebasse/base";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 const Navigation = () => {
-    return (
-        <div>
-            <Navbar Navbar
-                fluid={true}
-                rounded={false}
-            >
-                <Navbar.Brand>
-                    <img
-                        src={Logo}
-                        className="mr-3 h-6 sm:h-9 rounded-xl"
-                        alt="Flowbite Logo"
-                    />
-                    <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-                        TUBA SNEAKERS
-                    </span>
-                </Navbar.Brand>
-                <div className="flex md:order-2">
+  const currentUser = useAuth();
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
 
-                    <Navbar.Toggle />
-                </div>
-                <Navbar.Collapse>
-                    <Link to="/Home">
-                        <Navbar.Link
-                            to="/navbars"
-                            active={false}>
-                            Home
-                        </Navbar.Link>
-                    </Link>
-                    <Navbar.Collapse>
-                        <Link to="/About">About</Link >
-                    </Navbar.Collapse>
+  async function handleLogout() {
+    setLoading(true);
+    try {
+      await logout();
+      navigate("/");
+    } catch (error) {
+      alert("error!");
+    }
+    setLoading(false);
+  }
 
-                    <Link to="/Services">
-                        Services
-                    </Link>
-
-                    <Link to="/Pricing">
-                        Pricing
-                    </Link>
-                    <Link to="/Contact">
-                        Contact
-                    </Link>
-                </Navbar.Collapse>
-            </Navbar >
+  return (
+    <div>
+      <Navbar Navbar fluid={true} rounded={false}>
+        <Navbar.Brand>
+          <img
+            src={Logo}
+            className="mr-3 h-6 sm:h-9 rounded-xl"
+            alt="Flowbite Logo"
+          />
+          <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
+            TUBA SNEAKERS
+          </span>
+        </Navbar.Brand>
+        <div className="flex md:order-2">
+          <Navbar.Toggle />
         </div>
-    )
-}
+        <Navbar.Collapse>
+          <Link to="/Home">
+            <Navbar.Link to="/navbars" active={false}>
+              Home
+            </Navbar.Link>
+          </Link>
 
-export default Navigation
+          <Link to="/About">
+            <Navbar.Link to="/navbars" active={false}>
+              About
+            </Navbar.Link>
+          </Link>
+          <Link to="/Services">
+            <Navbar.Link to="/navbars" active={false}>
+              Services
+            </Navbar.Link>
+          </Link>
+          <Link to="/Pricing">
+            <Navbar.Link to="/navbars" active={false}>
+              Pricing
+            </Navbar.Link>
+          </Link>
+          <Link to="/Contact">
+            <Navbar.Link to="/navbars" active={false}>
+              Contact
+            </Navbar.Link>
+          </Link>
+
+          <Navbar.Link to="/navbars" active={false} className="">
+            Currently logged in as: {currentUser?.email}
+          </Navbar.Link>
+
+          <Navbar.Link to="/navbars" active={false} className="">
+            <button onClick={handleLogout}>Log Out</button>
+          </Navbar.Link>
+        </Navbar.Collapse>
+      </Navbar>
+    </div>
+  );
+};
+
+export default Navigation;

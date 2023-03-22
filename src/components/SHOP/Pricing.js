@@ -11,7 +11,7 @@ const Pricing = () => {
 
         <div>
             <Navigation />
-            <h1 className=' justify-center flex mt-10 text-4xl  text-bold text-gray-500 dark:text-gray-400'>Choose a PLAN that suits you the most and enjoy in benefits</h1>
+            <h1 className=' justify-center flex mt-10 text-4xl font-bold text-gray-500 dark:text-gray-400'>Choose a PLAN that suits you the most and enjoy in benefits</h1>
             <div className='justify-center  flex flex-wrap gap-x-28 mt-12 '>
                 <Subscription />
                 <Subscription2 />
