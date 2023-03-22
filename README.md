@@ -4,6 +4,10 @@ This is my first REACT project that I will be working on
 
 I'm just learning REACT technology, so the code itself is not clean
 
+The site still has bugs, so feel free to try it, all data is saved on firebass
+
+https://site-tuba-shop.netlify.app/
+
 
 
 
