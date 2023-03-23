@@ -5,8 +5,14 @@ import { async } from "@firebase/util";
 import { signup, useAuth, logout, login } from "./firebasse/base";
 
 import { useNavigate } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Form() {
+  const showErrorToast = () => toast.error("Login failed, try again");
+  const showErrorMailToast = () =>
+    toast.error(" Email already exists, try another email");
+
   const [loading, setLoading] = useState(false);
   const emailRef = useRef();
   const passwordRef = useRef();
@@ -17,9 +23,10 @@ function Form() {
     setLoading(true);
     try {
       await signup(emailRef.current.value, passwordRef.current.value);
+
       navigate("/home");
     } catch (error) {
-      alert("error!");
+      showErrorMailToast();
     }
     setLoading(false);
   }
@@ -29,7 +36,8 @@ function Form() {
       await login(emailRef.current.value, passwordRef.current.value);
       navigate("/home");
     } catch (error) {
-      alert("error!");
+      //alert("error!");
+      showErrorToast();
     }
     setLoading(false);
   }
@@ -89,6 +97,7 @@ function Form() {
             >
               CREATE A NEW ACCOUNT
             </button>
+            <ToastContainer />
             <button className="flex items-center justify-center gap-2 active:scale-[.98] active:duration-75 transition-all hover:scale-[1.01]  ease-in-out transform py-4  rounded-xl text-gray-700 font-semibold text-lg border-2 border-gray-100 ">
               <svg
                 width="24"

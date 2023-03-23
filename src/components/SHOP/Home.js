@@ -4,11 +4,28 @@ import Navigation from "./Navigation";
 import { useState } from "react";
 import Modal from "./Modal/Modal";
 import { motion } from "framer-motion";
-import { handler } from "daisyui";
+import { useAuth } from "../firebasse/base";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Home = () => {
+  const navigator = useNavigate();
   const [showMyModal, setShowMyModal] = useState(false);
   const handlerOnClose = () => setShowMyModal(false);
+  const user = useAuth();
+
+  if (user === null) {
+    navigator("/");
+  }
+
+  const notify = () =>
+    toast.success("You have successfully logged in to the site");
+
+  useEffect(() => {
+    notify("Alert in useEffect hook");
+  }, []);
 
   return (
     <div>
@@ -46,6 +63,7 @@ const Home = () => {
         </div>
       </motion.div>
       <Modal onClose={handlerOnClose} visible={showMyModal} />
+      <ToastContainer />
     </div>
   );
 };
