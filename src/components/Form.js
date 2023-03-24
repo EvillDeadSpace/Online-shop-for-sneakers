@@ -3,7 +3,6 @@ import React, { useState, useRef } from "react";
 import { handler } from "daisyui";
 import { async } from "@firebase/util";
 import { signup, useAuth, logout, login } from "./firebasse/base";
-
 import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -23,7 +22,6 @@ function Form() {
     setLoading(true);
     try {
       await signup(emailRef.current.value, passwordRef.current.value);
-
       navigate("/home");
     } catch (error) {
       showErrorMailToast();

@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import lila from "./Picture/lila.jpg";
 
 const Home = () => {
   const navigator = useNavigate();
@@ -27,41 +28,39 @@ const Home = () => {
     notify("Alert in useEffect hook");
   }, []);
 
+  const size = {
+    width: "360px",
+    height: "360px",
+  };
+  //min-h-screen
   return (
     <div>
       <Navigation />
-      <motion.div className="hero min-h-screen bg-base-200">
-        <div className="hero-content flex-col lg:flex-row-reverse">
-          <motion.div
-            animate={{ x: 100 }}
-            transition={{ type: "spring", stiffness: 100 }}
-          >
-            <img src={img1} className="max-w-sm rounded-lg shadow-2xl h-64" />
-          </motion.div>
-          <div>
-            <h1 className="text-5xl font-bold">
-              Offering the <span className=" text-red-700">BEST</span> sneakers
-              in the collection!
-            </h1>
-            <p className="py-6">
-              Currently in our collection I offer you the latest pair of NIKE 95
-              sneakers which in LIMITED FOR SALE.
-            </p>
-            <p
-              className="
-                          font-bold    text-3xl"
-            >
-              BUY NOW ONLY FOR 799$
-            </p>
-            <button
-              onClick={() => setShowMyModal(true)}
-              className="btn btn-primary mt-10"
-            >
-              ORDER NOW!
-            </button>
-          </div>
+
+      <div className="hero-content flex-col lg:flex-row-reverse min-h-screen  min-w-full ">
+        <div className="justify-center ">
+          <img src={lila} style={size} className="rounded-full  " />
         </div>
-      </motion.div>
+
+        <div className="mr-8">
+          <h1 className="text-5xl font-bold ">
+            Offering the <span className="  text-purple-500">BEST</span>{" "}
+            sneakers in the collection!
+          </h1>
+          <p className="py-6">
+            Currently in our collection I offer you the latest pair of NIKE AIR
+            FORCE 1 sneakers which in LIMITED FOR SALE.
+          </p>
+          <p className="font-bold text-3xl">BUY NOW ONLY FOR 399$</p>
+          <button
+            onClick={() => setShowMyModal(true)}
+            className="btn btn-primary mt-10"
+          >
+            ORDER NOW!
+          </button>
+        </div>
+      </div>
+
       <Modal onClose={handlerOnClose} visible={showMyModal} />
       <ToastContainer />
     </div>

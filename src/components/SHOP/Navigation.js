@@ -41,28 +41,28 @@ const Navigation = () => {
         <Navbar.Collapse>
           <Link to="/Home">
             <Navbar.Link to="/navbars" active={false}>
-              Home
+              <span className=" font-bold">Home</span>
             </Navbar.Link>
           </Link>
 
           <Link to="/About">
             <Navbar.Link to="/navbars" active={false}>
-              About
+              <span className=" font-bold"> About</span>
             </Navbar.Link>
           </Link>
           <Link to="/Services">
             <Navbar.Link to="/navbars" active={false}>
-              Services
+              <span className=" font-bold"> Services</span>
             </Navbar.Link>
           </Link>
           <Link to="/Pricing">
             <Navbar.Link to="/navbars" active={false}>
-              Pricing
+              <span className=" font-bold">Shop</span>
             </Navbar.Link>
           </Link>
           <Link to="/Contact">
             <Navbar.Link to="/navbars" active={false}>
-              Contact
+              <span className=" font-bold">Contact</span>
             </Navbar.Link>
           </Link>
 
@@ -71,7 +71,10 @@ const Navigation = () => {
           </Navbar.Link>
 
           <Navbar.Link to="/navbars" active={false} className="">
-            <button onClick={handleLogout}>Log Out</button>
+            <button onClick={handleLogout}>
+              {" "}
+              <span className=" font-bold">Log Out</span>
+            </button>
           </Navbar.Link>
         </Navbar.Collapse>
       </Navbar>
